@@ -1,13 +1,32 @@
 # CO₂ Emissions SQL Analysis
 
-This project contains a series of SQL queries that analyze a dataset of carbon dioxide (CO₂) emissions by country and year. The dataset is stored in a table called `co2_emission_project_sql_main_last` (with some queries referencing a similar table, `co2_emissions`). The queries cover a wide range of analytical tasks, including trends, rankings, per capita calculations, moving averages, and country comparisons.
+This project contains a series of SQL queries that analyze a dataset of carbon dioxide (CO₂) emissions by country and year. The dataset is included in this repository.
 
 ## Table of Contents
 
+- [Dataset](#dataset)
 - [Dataset Structure](#dataset-structure)
 - [Queries Included](#queries-included)
 - [Usage](#usage)
 - [Notes](#notes)
+
+## Dataset
+
+The dataset file is located at:
+
+- `co2_emission_project_sql_main_last.csv`
+
+You can import this CSV into your favorite SQL database system (such as SQLite, PostgreSQL, MySQL, etc.) for analysis.
+
+### Sample Content
+
+```csv
+country,year,co2_emission_tons,population_2022,area
+United States,2020,5000000000,331000000,9833517
+China,2020,10000000000,1440000000,9596961
+India,2020,2500000000,1380000000,3287263
+...
+```
 
 ## Dataset Structure
 
@@ -84,17 +103,16 @@ The main table used in these queries is expected to have the following columns:
 ## Usage
 
 1. **Preparation**:  
-   - Import your emissions dataset into a SQL database as `co2_emission_project_sql_main_last` (or `co2_emissions`).
+   - Import `co2_emission_project_sql_main_last.csv` into your SQL database.
    - Ensure columns match those described above.
 
 2. **Running Queries**:  
    - Copy the desired SQL query from the provided list.
-   - Run it in your SQL environment (e.g., SQLite, PostgreSQL, MySQL, etc.).
+   - Run it in your SQL environment.
    - Review and analyze the results.
 
 ## Notes
 
-- Some queries reference `co2_emissions` instead of `co2_emission_project_sql_main_last`. If your table is named differently, adjust accordingly.
 - Queries involving window functions (e.g., `RANK()`, `LAG()`, `AVG() OVER`) require a SQL database that supports these features.
 - Population and area-related queries require those columns to be populated.
 - Emission values are assumed to be in tons.
